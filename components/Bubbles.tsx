@@ -15,7 +15,8 @@ const BubbleItem = (props: Bubble) => {
           backgroundColor: props.isRight ? "#2975d0" : "#fff",
           padding: "1em",
           borderRadius: 4,
-          border: props.isRight ? "" : "1px solid rgba(0, 0, 0, 0.1)",
+          border: props.isRight ? "" : "1px solid #F1F1F1",
+          boxShadow: props.isRight ? "" : "1px 1px 24px #F3F3F3",
         }}
       >
         <Box>
@@ -30,7 +31,7 @@ const BubbleItem = (props: Bubble) => {
         <Typography
           align={props.isRight ? "right" : "left"}
           sx={{
-            color: "#6e7581",
+            color: "#6D737E",
             marginTop: "4px",
             padding: "0 1em",
             fontWeight: 500,
