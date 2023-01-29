@@ -125,6 +125,7 @@ export default function Home() {
                   width: 260,
                   fontSize: 18,
                   fontWeight: 800,
+                  textTransform: "unset",
                 }}
               >
                 Ask question
