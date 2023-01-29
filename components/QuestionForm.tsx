@@ -12,7 +12,7 @@ export default function QuestionForm({
   message,
 }: QuestionFormProps) {
   return (
-    <Box sx={{ marginTop: "1em" }}>
+    <Box sx={{ marginTop: "2em" }}>
       <form noValidate onSubmit={handleSubmit}>
         <Stack direction="row" spacing={4} alignItems="center">
           <TextField
@@ -31,9 +31,12 @@ export default function QuestionForm({
             sx={{
               borderRadius: 4,
               width: 220,
-              height: 54,
+              minHeight: 60,
               fontSize: 20,
               textTransform: "unset",
+              lineHeight: "unset",
+              paddingLeft: "unset",
+              paddingRight: "unset",
             }}
           >
             Ask question

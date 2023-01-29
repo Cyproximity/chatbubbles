@@ -29,7 +29,12 @@ const BubbleItem = (props: Bubble) => {
       <Box>
         <Typography
           align={props.isRight ? "right" : "left"}
-          sx={{ color: "#6e7581", marginTop: "4px", padding: "0 1em" }}
+          sx={{
+            color: "#6e7581",
+            marginTop: "4px",
+            padding: "0 1em",
+            fontWeight: 500,
+          }}
         >
           {props.datetime}
         </Typography>
