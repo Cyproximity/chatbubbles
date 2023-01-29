@@ -13,15 +13,19 @@ const BubbleItem = (props: Bubble) => {
         elevation={0}
         sx={{
           backgroundColor: props.isRight ? "#2975d0" : "#fff",
-          padding: "1em",
-          borderRadius: 4,
+          padding: "1em 1.5em",
+          borderRadius: "24px",
           border: props.isRight ? "" : "1px solid #F1F1F1",
           boxShadow: props.isRight ? "" : "1px 1px 24px #F3F3F3",
         }}
       >
         <Box>
           <Typography
-            sx={{ color: props.isRight ? "#fff" : "#000", fontSize: "18px" }}
+            sx={{
+              color: props.isRight ? "#fff" : "#131926",
+              fontSize: "20px",
+              fontWeight: 400,
+            }}
           >
             {props.message}
           </Typography>
