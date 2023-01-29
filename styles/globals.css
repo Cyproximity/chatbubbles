@@ -10,7 +10,8 @@ body {
 }
 
 .question input {
-  padding-right: 1em;
+  padding-left: 1.3em;
+  font-size: 20px;
 }
 
 .question fieldset {
@@ -19,6 +20,7 @@ body {
 
 .question input::-webkit-input-placeholder {
   color: #656c77;
+  font-size: 20px;
   font-weight: 800;
   font-family: "Roboto";
 }
@@ -26,17 +28,20 @@ body {
 .question input::-moz-placeholder {
   color: #656c77;
   font-weight: 800;
+  font-size: 20px;
   font-family: "Roboto";
 }
 
 .question input:-ms-input-placeholder {
   color: #656c77;
   font-weight: 800;
+  font-size: 20px;
   font-family: "Roboto";
 }
 
 .question input:-moz-placeholder {
   color: #656c77;
   font-weight: 800;
+  font-size: 20px;
   font-family: "Roboto";
 }
