@@ -1,4 +1,42 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   font-family: "Roboto";
   background: #fff;
+  padding: 1em 2em;
+}
+
+.question input {
+  padding-right: 1em;
+}
+
+.question fieldset {
+  border-radius: 12px;
+}
+
+.question input::-webkit-input-placeholder {
+  color: #656c77;
+  font-weight: 800;
+  font-family: "Roboto";
+}
+
+.question input::-moz-placeholder {
+  color: #656c77;
+  font-weight: 800;
+  font-family: "Roboto";
+}
+
+.question input:-ms-input-placeholder {
+  color: #656c77;
+  font-weight: 800;
+  font-family: "Roboto";
+}
+
+.question input:-moz-placeholder {
+  color: #656c77;
+  font-weight: 800;
+  font-family: "Roboto";
 }

@@ -1,56 +1,12 @@
 import Head from "next/head";
-import {
-  Button,
-  Container,
-  Paper,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
 import { useState } from "react";
 import { format } from "date-fns";
+import Header from "@/components/Header";
+import Bubbles, { Bubble } from "@/components/Bubbles";
+import QuestionForm from "@/components/QuestionForm";
 
 const b =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget pretium metus. Quisque vulputate lectus at ligula elementum, nec ullamcorper dui hendrerit. Nam posuere lectus eget est imperdiet laoreet. Ut vulputate interdum metus. Cras sed accumsan libero.";
-
-interface Bubble {
-  message: string;
-  datetime: string;
-  isRight?: boolean;
-}
-
-const BubbleItem = (props: Bubble) => {
-  return (
-    <Box sx={{ marginBottom: "1em" }}>
-      <Paper
-        elevation={0}
-        sx={{
-          backgroundColor: props.isRight ? "#2975d0" : "#fff",
-          padding: "1em",
-          borderRadius: 4,
-          border: props.isRight ? "" : "1px solid rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <Box>
-          <Typography
-            sx={{ color: props.isRight ? "#fff" : "#000", fontSize: "18px" }}
-          >
-            {props.message}
-          </Typography>
-        </Box>
-      </Paper>
-      <Box>
-        <Typography
-          align={props.isRight ? "right" : "left"}
-          sx={{ color: "#6e7581", marginTop: "4px", padding: "0 1em" }}
-        >
-          {props.datetime}
-        </Typography>
-      </Box>
-    </Box>
-  );
-};
 
 const timenow = () => format(Date.now(), "hh:mm bbb, ccc, d LLL");
 
@@ -87,53 +43,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container>
-        <Box sx={{ marginBottom: "2em" }}>
-          <Typography variant="h5" fontWeight={"800"}>
-            Question & Answer
-          </Typography>
-        </Box>
-
-        <Box>
-          {bubbles.map((bubble: Bubble, i) => (
-            <Stack
-              key={i}
-              direction="row"
-              justifyContent={!bubble.isRight ? "flex-start" : "flex-end"}
-              alignItems="center"
-            >
-              <BubbleItem {...bubble} />
-            </Stack>
-          ))}
-        </Box>
-
-        <Box sx={{ marginTop: "1em" }}>
-          <form noValidate onSubmit={handleSubmit}>
-            <Stack direction="row" spacing={3} alignItems="center">
-              <TextField
-                fullWidth
-                onChange={onMessageChange}
-                placeholder="Ask a question"
-                value={message}
-              />
-              <Button
-                variant="contained"
-                type="submit"
-                size="large"
-                sx={{
-                  borderRadius: 4,
-                  width: 260,
-                  fontSize: 18,
-                  fontWeight: 800,
-                  textTransform: "unset",
-                }}
-              >
-                Ask question
-              </Button>
-            </Stack>
-          </form>
-        </Box>
-      </Container>
+      <Header />
+      <Bubbles bubbles={bubbles} />
+      <QuestionForm
+        handleSubmit={handleSubmit}
+        onMessageChange={onMessageChange}
+        message={message}
+      />
     </>
   );
 }
