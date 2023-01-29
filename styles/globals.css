@@ -17,6 +17,7 @@ body {
 
 .question fieldset {
   border-radius: 12px;
+  border-color: #e5e7eb;
 }
 
 .question input::-webkit-input-placeholder {
